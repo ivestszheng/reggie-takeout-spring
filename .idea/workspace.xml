@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e13a020-b8ab-4bb1-9df9-23bb201291b8" name="Changes" comment="feat(后台登录): 创建 controller,service,mapper,entity">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivestszheng/common/R.java" afterDir="false" />
+    <list default="true" id="1e13a020-b8ab-4bb1-9df9-23bb201291b8" name="Changes" comment="feat(employee): 实现登录与登出">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivestszheng/common/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivestszheng/reggie/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivestszheng/reggie/filter/LoginCheckFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivestszheng/reggie/ReggieApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivestszheng/ReggieApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ivestszheng/reggie/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivestszheng/reggie/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivestszheng/reggie/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivestszheng/reggie/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/backend/js/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backend/js/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/backend/page/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backend/page/login/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,30 +88,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "dev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Workspace\reggie-takeout-spring\src\main\java\com\ivestszheng\reggie\entity" />
@@ -119,11 +120,11 @@
   </component>
   <component name="RunManager" selected="Spring Boot.ReggieApplication">
     <configuration name="ReggieApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ivestszheng.reggie.ReggieApplication" />
+      <option name="MAIN_CLASS_NAME" value="com.ivestszheng.ReggieApplication" />
       <module name="reggie_take_out" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ivestszheng.reggie.*" />
+          <option name="PATTERN" value="com.ivestszheng.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,10 +134,10 @@
     </configuration>
     <configuration name="ReggieApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="reggie_take_out" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ivestszheng.reggie.ReggieApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ivestszheng.ReggieApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.ivestszheng.reggie.*" />
+          <option name="PATTERN" value="com.ivestszheng.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,7 +163,11 @@
       <workItem from="1698137434536" duration="421000" />
       <workItem from="1698137900268" duration="1757000" />
       <workItem from="1698197626186" duration="9535000" />
-      <workItem from="1698211373372" duration="5831000" />
+      <workItem from="1698211373372" duration="6461000" />
+      <workItem from="1698221728360" duration="2508000" />
+      <workItem from="1698630847653" duration="3757000" />
+      <workItem from="1698822119255" duration="5058000" />
+      <workItem from="1698889408418" duration="14398000" />
     </task>
     <task id="LOCAL-00001" summary="feat(global): 环境搭建以及引入静态资源">
       <option name="closed" value="true" />
@@ -180,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698204621277</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat(employee): 实现登录与登出">
+      <option name="closed" value="true" />
+      <created>1698217321015</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698217321015</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +214,15 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="feat(global): 环境搭建以及引入静态资源" />
     <MESSAGE value="feat(后台登录): 创建 controller,service,mapper,entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(后台登录): 创建 controller,service,mapper,entity" />
+    <MESSAGE value="feat(employee): 实现登录与登出" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(employee): 实现登录与登出" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.ivestszheng.reggie.controller.EmployeeController" memberName="employeeService" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
