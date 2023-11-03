@@ -30,17 +30,25 @@ public class EmployeeController {
      */
     @PostMapping("/login")
     public R<Employee> login(HttpServletRequest request, @RequestBody Employee employee){
-        String password = employee.getPassword();
-        password = DigestUtils.md5DigestAsHex(password.getBytes());
+        // String password = employee.getPassword();
+        // password = DigestUtils.md5DigestAsHex(password.getBytes());
+        //
+        // LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper<Employee>();
+        // queryWrapper.eq(Employee::getUsername, employee.getUsername());
+        // Employee emp = employeeService.getOne(queryWrapper);
+        //
+        // if(emp == null || !emp.getPassword().equals(password)){
+        //     return R.error("登陆失败");
+        // } else if(emp.getStatus() == 0){
+        //     return R.error("账号已禁用");
+        // }
+        //
+        // request.getSession().setAttribute("employee", emp.getId());
+        // return R.success(emp);
+        Employee emp = employeeService.login(employee.getUsername(), employee.getPassword());
 
-        LambdaQueryWrapper<Employee> queryWrapper = new LambdaQueryWrapper<Employee>();
-        queryWrapper.eq(Employee::getUsername, employee.getUsername());
-        Employee emp = employeeService.getOne(queryWrapper);
-
-        if(emp == null || !emp.getPassword().equals(password)){
-            return R.error("登陆失败");
-        } else if(emp.getStatus() == 0){
-            return R.error("账号已禁用");
+        if (emp == null) {
+            return R.error("登录失败");
         }
 
         request.getSession().setAttribute("employee", emp.getId());
