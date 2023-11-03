@@ -64,7 +64,8 @@ public class EmployeeController {
     public R<String> logout(HttpServletRequest request){
         // 清理 session 中保存的当前员工的 id
         // HttpServletRequest 对象中，可以通过 getSession() 方法获取当前请求的会话对象。
-        request.getSession().removeAttribute("employee");
+        // request.getSession().removeAttribute("employee");
+        employeeService.logout(request);
         return R.success("退出成功");
     }
 
